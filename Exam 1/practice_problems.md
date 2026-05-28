@@ -9,7 +9,6 @@ PLEASE SUBMIT QUESTIONS IN ORDER OF THEIR APPEARANCE!
 
 3. A random variable $X$ with the range $RX = \{0, 1, 2, 3, 4\}$ has the following distribution:
 
-4. 
 
 | k | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
@@ -17,10 +16,10 @@ PLEASE SUBMIT QUESTIONS IN ORDER OF THEIR APPEARANCE!
 
 Find $E[X]$ and $var[X]$. (Note that you first need to determine $P (X = 4)$).
 
-5. Consider two boxes, call them box I and box II. Box I contains 3 blue and 5 red marbles, while box II contains 5 blue and 2 red marbles. Suppose you cast a die in order to randomly pick a box. If the die shows number 1, you choose box I. Otherwise, you choose box II. Now, from the chosen box, pick a single marble at random. If following this procedure you chose a red marble, what is the probability that it was drawn from box I? (round the answer to 4
+4. Consider two boxes, call them box I and box II. Box I contains 3 blue and 5 red marbles, while box II contains 5 blue and 2 red marbles. Suppose you cast a die in order to randomly pick a box. If the die shows number 1, you choose box I. Otherwise, you choose box II. Now, from the chosen box, pick a single marble at random. If following this procedure you chose a red marble, what is the probability that it was drawn from box I? (round the answer to 4
 decimal places).
 
-6. Let X = the number of sixes in 10 rolls of a die. Recall that in the documentation for `pbinom()`, for the argument `lower.tail` it says: `lower.tail`: logical; if `TRUE` (default), probabilities are $P[X≤x]$, otherwise, $P[X>x]$.
+5. Let X = the number of sixes in 10 rolls of a die. Recall that in the documentation for `pbinom()`, for the argument `lower.tail` it says: `lower.tail`: logical; if `TRUE` (default), probabilities are $P[X≤x]$, otherwise, $P[X>x]$.
 
 I. Which of the following R commands could be used to find $P (X ≥ 4)$? (check all that apply)
 
