@@ -156,3 +156,42 @@ $$
 P(B_1 | R)P(R) = P(R | B_1)P(B_1) \\
 P(B_1 | R) = \frac{P(R | B_1)P(B_1)}{P(R)}
 $$
+
+$$
+P(R) = P(R | B_1)P(B_1) + P(R | B_2)P(B_2) \\
+ = \left(\frac{5}{8}\right)\left(\frac{1}{6} \right) + \left( \frac{2}{7}\right)\left(\frac{5}{6}\right)\\
+ = 0.3422619
+$$
+
+$$
+P(B_1 | R) = \frac{P(R | B_1)P(B_1)}{P(R)} \\
+= \frac{\left(\frac{5}{8}\right)\left(\frac{1}{6} \right)}{0.3422619} \\
+= \frac{0.1041667}{0.3422619} \\
+\approx \boxed{0.3043}
+$$
+
+### Rational
+
+Similar to other problems, we can use Bayes' Theorem to find the probability that the red marble was drawn from box I given that a red marble was drawn. We just need to find $P(R)$ using the law of total probability, then substitute it back into Bayes' Theorem to find $P(B_1 | R)$.
+
+## Problem 5
+
+### Solution
+
+We will look at each option and see what it is calculating in R to determine which options are correct.
+
+- (a) `pbinom(q=4,size=10,prob=1/6,lower.tail=T)`: with lower tail as True, this is computing $X \le 4$
+- (b) `pbinom(q=4,size=10,prob=1/6,lower.tail=F)`: with lower tail false, we are computing $X > 4$
+- (c) `pbinom(q=3.5,size=10,prob=1/6,lower.tail=F)`: with lower tail false, we are computing $X > 3.5$
+- (d) `pbinom(q=3,size=10,prob=1/6,lower.tail=F)`: with lower tail false, we are computing $X > 3$
+- (e) `pbinom(q=3,size=10,prob=1/6)`: Lower tail is true by default so we are computing $X \le 3$
+- (f) `pbinom(q=3.9,size=10,prob=1/6,lower.tail=FALSE)`: with lower tail as false, we are computing $X > 3.9$
+- (g) `pbinom(q=4.1,size=10,prob=1/6,lower.tail=F)`: with lower tail as false, we are computing $X > 4.1$
+
+Looking at the options above, the ones that will compute $X \ge 4$ are:
+
+c, d, and f
+
+### Rational
+
+I am less certain on the specifics of the function, other than the pbinom function using integers for the steps, so while using the `lower.tail=F` flag in the function will compute $x > q$. In our case, if q is less than 4, then the result from the pbinom function will be $x \ge 4$.
