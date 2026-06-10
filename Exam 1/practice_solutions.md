@@ -195,3 +195,36 @@ c, d, and f
 ### Rational
 
 I am less certain on the specifics of the function, other than the pbinom function using integers for the steps, so while using the `lower.tail=F` flag in the function will compute $x > q$. In our case, if q is less than 4, then the result from the pbinom function will be $x \ge 4$.
+
+## Problem 7
+
+### Solution
+
+The total expected length of the assembly is the sum of the expected lengths of the rod and two bearings:
+
+$$
+E[A] = E[R] + 2E[B] \\
+= 80 + 2 \cdot 30 \\
+= 140
+$$
+
+The expected standard deviation of the assembly can be found by using the formula for the variance of the sum of independent random variables:
+
+$$
+var[A] = var[R] + 2var[B] \\
+= 0.003^2 + 2 \cdot 0.002^2 \\
+= 0.000009 + 2 \cdot 0.000004 \\
+= 0.000017 \\
+$$
+
+When then take the square root to find the standard deviation:
+
+$$
+\sigma_A = \sqrt{var[A]} \\
+= \sqrt{0.000017} \\
+\approx 0.004123
+$$
+
+### Rational
+
+Since the bearings and the rod are independent, we can find the expected length of the entire assembly by summing up the expected lengths of each individual part. We cannot, however, simply sum the standard deviations, but since the variance of the sum of independent random variables is the sum of their variances, we can find the variance of the total length by summing the variances of the rod and the two bearings. Finally, we take the square root of the variance to find the standard deviation of the total length.
