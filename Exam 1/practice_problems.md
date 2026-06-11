@@ -83,3 +83,58 @@ II. Which of the following could you use to find P (5 ≤ X ≤ 9)? (check all t
 - (c) `pnorm(q=54, mean=54, sd=sqrt(37.8))`
 - (d) `pnorm(q=60-50, mean=54, sd=sqrt(37.8))`
 - (e) `pnorm(q=60, mean=180, sd=sqrt(37.8)) - pnorm(49, mean=180, sd=sqrt(37.8))`
+
+
+Scaling rule: $\mathrm{Var}(aY)=a^2\mathrm{Var}(Y)$
+
+For independent variables: $\mathrm{Var}\left(\sum X_i\right)=\sum \mathrm{Var}(X_i)$
+
+Yes — you can make it much faster than re-plugging into ($\binom{n}{k}p^k q^{n-k}$) four separate times.
+
+Here ($X \sim \text{Bin}(n=11,p=\tfrac16)$), ($q=\tfrac56$), and you want ($P(X\le 3)$).
+
+Fast pen-and-paper method: compute (P(0)) once, then recurse
+Start with
+$$[
+P(0)=q^{11}=\left(\frac56\right)^{11}.
+]$$
+
+Then use the ratio
+$$[
+\frac{P(k+1)}{P(k)}=\frac{n-k}{k+1}\cdot\frac{p}{q}.
+]$$
+So
+$$[
+P(k+1)=P(k)\left(\frac{n-k}{k+1}\right)\left(\frac{p}{q}\right).
+]$$
+
+For this problem, ($\frac{p}{q}=\frac{1/6}{5/6}=\frac15$).
+
+($P(0)=\left(\frac56\right)^{11}$)
+($P(1)=P(0)\cdot \frac{11}{1}\cdot\frac15 = P(0)\cdot\frac{11}{5}$)
+($P(2)=P(1)\cdot \frac{10}{2}\cdot\frac15 = P(1)\cdot 1$) (nice simplification!)
+($P(3)=P(2)\cdot \frac{9}{3}\cdot\frac15 = P(2)\cdot\frac35$)
+So the sum is quick:
+$$[
+P(X\le 3)=P(0)+P(1)+P(2)+P(3)
+= P(0)\left(1+\frac{11}{5}+\frac{11}{5}+\frac{11}{5}\cdot 1\cdot\frac35\right).
+]$$
+
+If you want a clean exact-number shortcut, factor the common denominator (6^{11}):
+$$[
+P(X\le 3)=\frac{5^{11}+11\cdot 5^{10}+55\cdot 5^9+165\cdot 5^8}{6^{11}}
+=\frac{5^8(125+275+275+165)}{6^{11}}
+=\frac{328{,}125{,}000}{362{,}797{,}056}\approx 0.9044.
+]$$
+
+Fastest if calculators/R are allowed
+In R: `pbinom(3, size=11, prob=1/6)`.
+
+Quick approximation (if they allow approximations)
+Since (np=11/6\approx 1.833) is small, Poisson((\lambda=np)) gives a decent estimate:
+[
+P(X\le 3)\approx e^{-\lambda}\left(1+\lambda+\frac{\lambda^2}{2}+\frac{\lambda^3}{6}\right).
+]
+But on an exact-probability question, the recursion method above is the best “by hand” speedup.
+
+If you want, I can show how to do the recursion with minimal arithmetic on a basic calculator (basically 2–3 multiplications per step).
