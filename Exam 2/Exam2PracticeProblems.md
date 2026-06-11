@@ -10,7 +10,7 @@
 
 (a) Set up a suitable (simple!) null hypothesis, as well as a composite alternative hypothesis regarding the parameter $\theta =$ probability of success in a single free throw. (Note: you van first think of some suitable composite null hypothesis, and as its worse case scenario, extract appropriate simple null hypothesis).
 
-$H_0: \theta = $ _____  VS $H_1: \theta$ _____.
+$H_0: \theta =$ _____  VS $H_1: \theta$ _____.
 
 (b) Suppose you want to run the test base on statistic $X =$ number of successful shots in the 50 trials. Which of the these intervals is the most reasonable choice for critical (i.e. rejection) region? (circle one)
 
