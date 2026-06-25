@@ -151,3 +151,4 @@ $$
 n = \left( \frac{1.96}{0.01} \right)^2 (0.6)(0.4) = 9219.84
 $$
 Therefore, the smallest sample size required is approximately 9220.
+

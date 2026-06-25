@@ -41,7 +41,7 @@ We take $n$ independent trials an let $X$ be the number of success in these $n$ 
 
 For a given observed value $X = x$, find posterior distribution $\pi(\theta|x)$ for any given outcome $x$ (= total number of successes), for any $\theta \in \mathbb{R}$ (don't forget the case $\theta \notin (0, 1$). Is the posterior still a beta distribution?
 
-5. A sample size $n$ is drawn from an exponential distribution which is defined as 
+5. A sample size $n$ is drawn from an exponential distribution which is defined as
 
 $$
 f(x; \theta) = \left\{
@@ -92,3 +92,13 @@ F-statistic: 1882 on 1 and 148 degrees of freedom, p-value: < 2.2e-16
 (b) Conduct a test to determine whether there is linear associate between X and Y at a confidence level 90%. State the null and alternative hypothesis, decision rule by p-value and your conclusion.
 
 (c) According to the model, what is the estimate of the mean of Petal. Width Y when the Petal. Length x is 6? That is, find $\hat{\mu}_{Y|X=6}$.
+
+8. A multiple-choice test question has six possible answers. The question is designed to be very difficult, with exactly one correct answer, but with none of the remaining responses being obeviously worng. The question occurs on an exam taken by 400 students. Let $X$ be the number of students who answer the question correctly and $p$ denotes the probability of a randomly chosen student answering the question correctly. The designers of the question would like to demonstrate that at least some students know what the correct answer is. That is, they want to test whether more people answer the question correctly than it would be excpected just by pure chance. Which hypothesis test and its critical region should be used?
+
+(a) $H_0: p = 0.5 \text{ vs. } H_A = p > 0.5$; critical region: $X < k$ for some $k \in \mathbb{N}$
+
+(b) $H_0: p = 0.5 \text{ vs. } H_A = p > 0.5$; critical region: $X > k$ for some $k \in \mathbb{N}$
+
+(c) $H_0: p = 1/6 \text{ vs. } H_A = p > 1/6$; critical region: $X < k$ for some $k \in \mathbb{N}$
+
+(d) $H_0: p = 1/6 \text{ vs. } H_A = p > 1/6$; critical region: $X > k$ for some $k \in \mathbb{N}$
